@@ -16,5 +16,6 @@ environments:
               namespace: default
               annotations:
                 app: hello
-            data: |- 
-              "Hello world from Keel's land"
+            data:
+              message: |- 
+                "Hello world from Keel's land"
