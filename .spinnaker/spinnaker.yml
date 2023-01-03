@@ -11,7 +11,7 @@ environments:
       - kind: k8s/resource@v1
         spec:
           metadata:
-            application: keel-demo
+            application: keel
           template:
             apiVersion: v1
             kind: ConfigMap
