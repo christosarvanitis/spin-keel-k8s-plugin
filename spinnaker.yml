@@ -1,0 +1,20 @@
+environments:
+  - name: test-keel-env
+    locations:
+      account: spinnaker
+      regions: []
+    resources:
+      - kind: k8s/resource@v1
+        spec:
+          metadata:
+            application: keel-demo
+          template:
+            apiVersion: v1
+            kind: ConfigMap
+            metadata:
+              name: my-configmap
+              namespace: default
+              annotations:
+                app: hello
+            data: |- 
+              "Hello world from Keel's land"
