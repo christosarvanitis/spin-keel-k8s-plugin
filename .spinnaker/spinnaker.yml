@@ -20,6 +20,7 @@ environments:
               namespace: default
               annotations:
                 app: hello
+                added: label2
             data:
               message: |-
                 "Hello world from Keel's land"
