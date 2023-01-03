@@ -7,19 +7,19 @@ environments:
     locations:
       account: spinnaker
       regions: []
-    resources: []
-#      - kind: k8s/resource@v1
-#        spec:
-#          metadata:
-#            application: keel
-#          template:
-#            apiVersion: v1
-#            kind: ConfigMap
-#            metadata:
-#              name: my-configmap
-#              namespace: default
-#              annotations:
-#                app: hello
-#            data:
-#              message: |-
-#                "Hello world from Keel's land"
+    resources:
+      - kind: k8s/resource@v1
+        spec:
+          metadata:
+            application: keel
+          template:
+            apiVersion: v1
+            kind: ConfigMap
+            metadata:
+              name: my-configmap-2
+              namespace: default
+              annotations:
+                app: hello
+            data:
+              message: |-
+                "Hello world from Keel's land"
