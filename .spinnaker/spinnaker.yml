@@ -68,7 +68,7 @@ environments:
                 spec:
                   containers:
                     - name: nginx
-                      image: nginx:1.14.2
+                      image: nginx:not_found
                       ports:
                         - containerPort: 80
   - name: test-keel-prod-2
