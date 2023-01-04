@@ -6,5 +6,25 @@ environments:
   - name: test-keel-env
     locations:
       account: spinnaker
-      regions: []
-    resources: []
+      regions:
+        - kube-system
+    resources:
+      - kind: k8s/resource@v1
+        spec:
+          metadata:
+            application: keel
+          template:
+            apiVersion: v1
+            kind: Pod
+            metadata:
+              name: mc1
+            spec:
+              volumes:
+                - name: html
+                  emptyDir: { }
+              containers:
+                - name: 1st
+                  image: nginx
+                  volumeMounts:
+                    - name: html
+                      mountPath: /usr/share/nginx/html
