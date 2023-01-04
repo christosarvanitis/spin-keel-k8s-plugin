@@ -32,11 +32,11 @@ environments:
                 spec:
                   containers:
                     - name: nginx
-                      image: nginx:1.23.3
+                      image: nginx:1.14.2
                       ports:
                         - containerPort: 80
   - name: test-keel-prod
-    constrains:
+    constraints:
       - type: manual-judgement
       - type: depends-on
         environment: test-keel-stage
@@ -68,11 +68,11 @@ environments:
                 spec:
                   containers:
                     - name: nginx
-                      image: nginx:1.23.3
+                      image: nginx:1.14.2
                       ports:
                         - containerPort: 80
   - name: test-keel-prod-2
-    constrains:
+    constraints:
       - type: manual-judgement
       - type: depends-on
         environment: test-keel-stage
