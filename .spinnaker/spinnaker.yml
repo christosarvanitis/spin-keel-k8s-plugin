@@ -1,7 +1,7 @@
 name: keel-demo-delivery-config # delivery config name
 application: keel # spinnaker application name
 serviceAccount: keel-service-account  # spinnaker service account
-artifacts: [] # list of artifacts
+artifacts: []  # list of artifacts
 environments:
   - name: test-keel-stage
     locations:
