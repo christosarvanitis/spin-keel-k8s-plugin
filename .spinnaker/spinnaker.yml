@@ -36,6 +36,10 @@ environments:
                       ports:
                         - containerPort: 80
   - name: test-keel-prod
+    constrains:
+      - type: manual-judgement
+      - type: depends-on
+        environment: test-keel-stage
     locations:
       account: spinnaker
       regions: []
