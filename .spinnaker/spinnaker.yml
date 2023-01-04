@@ -32,7 +32,7 @@ environments:
                 spec:
                   containers:
                     - name: nginx
-                      image: nginx:1.14.2
+                      image: nginx:not_found
                       ports:
                         - containerPort: 80
   - name: test-keel-prod
@@ -68,7 +68,7 @@ environments:
                 spec:
                   containers:
                     - name: nginx
-                      image: nginx:not_found
+                      image: nginx:1.14.2
                       ports:
                         - containerPort: 80
   - name: test-keel-prod-2
@@ -104,6 +104,6 @@ environments:
                 spec:
                   containers:
                     - name: nginx
-                      image: nginx:1.14.2
+                      image: nginx:1.23.3
                       ports:
                         - containerPort: 80
