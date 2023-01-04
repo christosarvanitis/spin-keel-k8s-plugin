@@ -6,8 +6,7 @@ environments:
   - name: test-keel-env
     locations:
       account: spinnaker
-      regions:
-        - kube-system
+      regions: []
     resources:
       - kind: k8s/resource@v1
         spec:
@@ -18,6 +17,7 @@ environments:
             kind: Pod
             metadata:
               name: mc1
+              namespace: kube-system
             spec:
               volumes:
                 - name: html
