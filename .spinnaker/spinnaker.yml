@@ -2,4 +2,68 @@ name: keel-demo-delivery-config # delivery config name
 application: keel # spinnaker application name
 serviceAccount: keel-service-account  # spinnaker service account
 artifacts: [] # list of artifacts
-environments: []
+environments:
+  - name: test-keel-stage
+    locations:
+      account: spinnaker
+      regions: []
+    resources:
+      - kind: k8s/resource@v1
+        spec:
+          metadata:
+            application: keel
+          template:
+            apiVersion: apps/v1
+            kind: Deployment
+            metadata:
+              name: nginx-deployment
+              namespace: default
+              labels:
+                app: nginx
+            spec:
+              replicas: 1
+              selector:
+                matchLabels:
+                  app: nginx
+              template:
+                metadata:
+                  labels:
+                    app: nginx
+                spec:
+                  containers:
+                    - name: nginx
+                      image: nginx:1.14.2
+                      ports:
+                        - containerPort: 80
+  - name: test-keel-prod
+    locations:
+      account: spinnaker
+      regions: []
+    resources:
+      - kind: k8s/resource@v1
+        spec:
+          metadata:
+            application: keel
+          template:
+            apiVersion: apps/v1
+            kind: Deployment
+            metadata:
+              name: nginx-deployment
+              namespace: kube-system
+              labels:
+                app: nginx
+            spec:
+              replicas: 1
+              selector:
+                matchLabels:
+                  app: nginx
+              template:
+                metadata:
+                  labels:
+                    app: nginx
+                spec:
+                  containers:
+                    - name: nginx
+                      image: nginx:1.14.2
+                      ports:
+                        - containerPort: 80
